@@ -87,6 +87,7 @@ request.get({
                         }
                         console.log(evt)
                         teams.push(evt)
+                        // Object.assign(teams, evt)
                         teams = removeDuplicates(uniq(teams)).sort((a, b) => a - b)
                         console.log("Teams", teams)
                         var json = JSON.stringify(teams)
