@@ -1,11 +1,13 @@
 // FINSIHED AND WORKING!!!!
 'use strict';
-var events = [];
-var teams = [];
+
 var request = require('request');
 var d = require('./const.js')
 var fs = require('fs');
 var sprintf = require('sprintf-js').sprintf
+
+var events = [];
+var teams = [];
 
 var url = "http://thebluealliance.com/api/v3/team/frc"+d.team+"/events/2019"
 
