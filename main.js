@@ -70,10 +70,10 @@ request.get({
                                 teamEvents.push(element.short_name)
                             })
                         }
+                        // If configured for google sheets, use google sheet format for hyperlink
                         if(d.forGsheet){
                             // var str = `=HYPERLINK('https://www.thebluealliance.com/team/${e.team_number}', ${e.team_number})`
                             var str = sprintf('=HYPERLINK("https://www.thebluealliance.com/team/%s/", %s)', e.team_number, e.team_number)
-                            // replaceAllBackSlash(str);
                             str = str.replace("/\/", '');
                             var evt = {team: str}
                         } else {
@@ -93,13 +93,10 @@ request.get({
                         fs.writeFile('teams.json', json, 'utf8', function cb(err){
                             if(err) {
                                 console.log(err);
-                            } else {
-                                // console.log("Success!")
                             }
                         })
                     })
                     // End Generate event list
-                    
                 })
             }
         })
@@ -121,13 +118,4 @@ function removeDuplicates(arr){
         }
     }
     return unique_array
-}
-
-function replaceAllBackSlash(targetStr){
-    var index=targetStr.indexOf("\\");
-    while(index >= 0){
-        targetStr=targetStr.replace("\\","");
-        index=targetStr.indexOf("\\");
-    }
-    return targetStr;
 }
