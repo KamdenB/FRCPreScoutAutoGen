@@ -97,7 +97,7 @@ request.get({
                             }
                         })
                     })
-                    // End Generate event list
+                    // End Generate event list --- 
                 })
             }
         })
@@ -105,13 +105,13 @@ request.get({
 })
 
 
-function uniq(a) {
+function uniq(a) { // return the unique items from the array (I think)
     return a.sort().filter(function(item, pos, ary) {
         return !pos || item != ary[pos - 1];
     })
 }
 
-function removeDuplicates(arr){
+function removeDuplicates(arr){ // probably removes duplicates from the array
     let unique_array = []
     for(let i = 0;i < arr.length; i++){
         if(unique_array.indexOf(arr[i]) == -1){
