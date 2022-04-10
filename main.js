@@ -9,7 +9,7 @@ var sprintf = require('sprintf-js').sprintf
 var events = [];
 var teams = [];
 
-var url = "http://thebluealliance.com/api/v3/team/frc"+d.team+"/events/2019"
+var url = "http://thebluealliance.com/api/v3/team/frc"+d.team+"/events/2022"
 
 // Get inital list of events defined team is competing at
 request.get({
@@ -30,7 +30,7 @@ request.get({
             events.push(element.key)
         })
     }
-    console.log(events)
+    // console.log(events)
     // From the list of events, make a list of teams that will be there
     events.forEach((e) => {
         let u = "https://www.thebluealliance.com/api/v3/event/" + e + "/teams"
@@ -50,7 +50,7 @@ request.get({
                 // With the array of 
                 data.forEach((e) => {
                     // Generate event list
-                    var data = "http://thebluealliance.com/api/v3/team/frc"+e.team_number+"/events/2019"
+                    var data = "http://thebluealliance.com/api/v3/team/frc"+e.team_number+"/events/2022"
                     var teamEvents = [];
                     request.get({
                         url: data,
